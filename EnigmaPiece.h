@@ -6,11 +6,22 @@
 #define CENIGMA_SZ6315_ENIGMAPIECE_H
 
 
+#include "Alphabet.h"
 
 class EnigmaPiece {
+public:
+    void setNext(const EnigmaPiece &next);
+    void rotate();
+    void rotate(int offset);
+    virtual substitute(int index)
+protected:
+    EnigmaPiece next;
+    Alphabet alphabet;
+
+
+
 
 };
-
 
 
 #endif //CENIGMA_SZ6315_ENIGMAPIECE_H

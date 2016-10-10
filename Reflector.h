@@ -6,7 +6,14 @@
 #define CENIGMA_SZ6315_REFLECTOR_H
 
 
-class Reflector {
+#include "EnigmaPiece.h"
+#include "Alphabet.h"
+
+class Reflector : public EnigmaPiece
+{
+private:
+    const int mappingFunction(int x);
+
 
 };
 

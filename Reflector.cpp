@@ -3,3 +3,7 @@
 //
 
 #include "Reflector.h"
+
+const int Reflector::mappingFunction(int x) {
+    return (x+13)%26;
+}

@@ -3,3 +3,10 @@
 //
 
 #include "EnigmaPiece.h"
+
+void EnigmaPiece::setNext(const EnigmaPiece &next) {
+    EnigmaPiece::next = next;
+
+
+}
+
