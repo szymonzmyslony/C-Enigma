@@ -10,3 +10,12 @@ void EnigmaPiece::setNext(const EnigmaPiece &next) {
 
 }
 
+
+void EnigmaPiece::rotate() {
+
+}
+
+void EnigmaPiece::rotate(int offset) {
+
+}
+

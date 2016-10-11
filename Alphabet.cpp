@@ -5,11 +5,22 @@
 #include "Alphabet.h"
 
 const int &Alphabet::getIndex(char character) {
+    int index = character;
+    return index;
 
 }
 
 const char &Alphabet::getCharacter(int index) {
+    char character = index;
+    return character;
 
 
 }
+
+const int &Alphabet::shift(int index, int offset) {
+    return ((index+offset)%ALPHABET_LENGTH);
+}
+
+
+
 

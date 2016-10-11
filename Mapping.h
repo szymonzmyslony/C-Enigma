@@ -6,17 +6,20 @@
 #define CENIGMA_SZ6315_MAPPING_H
 
 
-
-using namespace std;
-
 #include <map>
 #include "EnigmaPiece.h"
 
+using namespace std;
+
+
+
 class Mapping : public EnigmaPiece {
 protected:
-    std::map<int, int> mapping;
-    int encode(int index);
-    int decode(int index);
+    map<int, int> mapping;
+
+    virtual int encode(int index);
+
+    virtual int decode(int index);
 
 
 public:

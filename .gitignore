@@ -2,6 +2,8 @@
 
 #ignore IDE files
 .idea/
+CMakeLists.txt
+
 
 #ignore temp files
 *~

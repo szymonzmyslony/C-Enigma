@@ -13,7 +13,7 @@ public:
     void setNext(const EnigmaPiece &next);
     void rotate();
     void rotate(int offset);
-    virtual substitute(int index)
+    virtual int substitute(int index);
 protected:
     EnigmaPiece next;
     Alphabet alphabet;
