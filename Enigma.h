@@ -7,8 +7,21 @@
 
 
 #include "EnigmaPiece.h"
+#include "Alphabet.h"
+#include "Rotor.h"
+#include "EnigmaPiece.h"
+#include "Reflector.h"
+#include "Plugboard.h"
+
 
 class Enigma : EnigmaPiece {
+public:
+    char encode (char toBeEncodded);
+
+private:
+    Alphabet alphabet1;
+    bool checkIt(char & character);
+
 
 
 

@@ -19,7 +19,7 @@ private:
 
 int Plugboard::substitute(int index) {
     next.rotate();
-    return Mapping::substitute(index);
+    return EnigmaPiece::substitute(index);
 }
 
 #endif //CENIGMA_SZ6315_PLUGBOARD_H

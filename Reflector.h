@@ -8,23 +8,18 @@
 
 
 #include "Alphabet.h"
-#include "Mapping.h"
+#include "EnigmaPiece.h"
 
-class Reflector : public Mapping
+class Reflector : public EnigmaPiece
 {
 private:
     const int mappingFunction(int x);
     const int inverseMapping(int x);
 
-public:
-
-
-    virtual int substitute(int index) override;
-
 protected:
-    virtual int encode(int index) override;
-
-    virtual int decode(int index) override;
+    int encode(int index) override;
+    int substitute(int index) override;
+    int decode(int index) override;
 
 };
 

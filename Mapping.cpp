@@ -4,10 +4,6 @@
 
 #include "Mapping.h"
 
-int Mapping::substitute(const int index) {
-    return  decode(next.substitute(encode(index)));
-}
-
 int Mapping::encode(int index) {
     map<int, int>::iterator it = mapping.find(index);
     if(it != mapping.end()) {
@@ -18,7 +14,6 @@ int Mapping::encode(int index) {
     }
 
 int Mapping::decode(int index) {
-    for (map<int, int>::iterator it = mapping.begin(); it != mapping.end(); ++it )
-    if (it->second == index)
-        return it->first;
+    return encode(encode(index));
 }
+

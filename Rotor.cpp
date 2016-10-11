@@ -4,7 +4,7 @@
 
 #include "Rotor.h"
 
-Rotor::Rotor(map<int, int> map) : mapping(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR){}
+Rotor::Rotor(int map[]) : arrayMapping(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR){}
 
 void Rotor::rotate() {
     next.rotate(latch_position);
@@ -15,6 +15,7 @@ void Rotor::rotate() {
         latch_position++;
     }
     //NEED TO UPDATE MAPING, LEArN ABOUT ITERATORS IN C++
+    arrayMapping.update();
 
     locked = true;
 

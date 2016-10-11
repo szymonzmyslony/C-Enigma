@@ -7,14 +7,15 @@
 #define STARTING_POSITION_OF_ROTOR 1
 #define LAST_POSITION_OF_ROTOR 26
 
-#include "Mapping.h"
 
-class Rotor : public Mapping{
+#include "ArrayMap.h"
+
+class Rotor : public ArrayMap{
 private:
     int latch_position;
     bool locked;
 public:
-    Rotor(map<int, int> map);
+    Rotor(int arrayMap[]);
 
     virtual void rotate() override;
 
