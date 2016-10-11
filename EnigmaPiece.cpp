@@ -15,7 +15,7 @@ void EnigmaPiece::rotate() {
 
 }
 
-void EnigmaPiece::rotate(int offset) {
+void EnigmaPiece::rotate(int previous_latch) {
 
 }
 

@@ -11,8 +11,10 @@
 class EnigmaPiece {
 public:
     void setNext(const EnigmaPiece &next);
-    void rotate();
-    void rotate(int offset);
+
+    virtual void rotate();
+
+    virtual void rotate(int previous_latch);
     virtual int substitute(int index);
 protected:
     EnigmaPiece next;
