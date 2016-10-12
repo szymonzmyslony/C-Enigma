@@ -7,21 +7,20 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    vector<shared_ptr<EnigmaPiece>> pieces;
-
 
     argv++;
     int **arrayForRotors;
     map<int, int> *mapForPlugboard;
     ParseFile *parseFile = new ParseFile(arrayForRotors, mapForPlugboard, argc - 1, argv);
-    delete (parseFile);
+    delete(parseFile);
     Enigma *enigma = new Enigma(arrayForRotors, mapForPlugboard, argc - 2);
+
+    delete(mapForPlugboard);
     char toBeEncoded;
     while (cin >> toBeEncoded) {
         cout << (enigma->encodeCharacter(toBeEncoded));
-
     }
-    delete (&enigma);
+    delete(enigma);
 
 
 }
