@@ -11,15 +11,12 @@ void Rotor::rotate() {
     if (latch_position=ALPHABET_LENGTH){
         latch_position = STARTING_POSITION_OF_ROTOR;
     }
+
     else{
         latch_position++;
     }
-    //NEED TO UPDATE MAPING, LEArN ABOUT ITERATORS IN C++
-    arrayMapping.update();
-
+    update();
     locked = true;
-
-
 }
 
 void Rotor::rotate(int previous_latch) {
@@ -29,10 +26,6 @@ void Rotor::rotate(int previous_latch) {
     else{
         locked=true;
     }
-
-
-
-
 
 
 }

@@ -5,7 +5,7 @@
 #ifndef CENIGMA_SZ6315_CODABLE_H
 #define CENIGMA_SZ6315_CODABLE_H
 #define ALPHABET_LENGTH 26
-#define SHIFT_POSITION 1
+#define SHIFT_POSITION 0
 
 class Alphabet {
 public:
