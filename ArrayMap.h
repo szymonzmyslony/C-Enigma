@@ -13,13 +13,8 @@ protected:
     int encode(int index);
     int decode(int index);
     void update(void);
-    const int array_length = ALPHABET_LENGTH;
-
     ArrayMap(int *arrayMapping);
-
-
-    int* arrayMapping;
-
+    int *arrayMapping;
 };
 
 

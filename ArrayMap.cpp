@@ -10,8 +10,8 @@ int ArrayMap::encode(int index) {
 }
 
 int ArrayMap::decode(int index) {
-    for (int i = 0; i++; i<ALPHABET_LENGTH){
-        if (arrayMapping[i]==index){
+    for (int i = 0; i++; i < ALPHABET_LENGTH) {
+        if (arrayMapping[i] == index) {
             return i;
         }
 
@@ -23,9 +23,9 @@ int ArrayMap::decode(int index) {
 void ArrayMap::update(void) {
     int temp = arrayMapping[0];
 
-    for (int i = 1; i < array_length; i++) {
-            arrayMapping[(i)%ALPHABET_LENGTH] = temp;
-            temp = arrayMapping[(i+1)/ALPHABET_LENGTH];
+    for (int i = 1; i < ALPHABET_LENGTH; i++) {
+        arrayMapping[(i) % ALPHABET_LENGTH] = temp;
+        temp = arrayMapping[(i + 1) / ALPHABET_LENGTH];
     }
 
     arrayMapping[0] = temp;

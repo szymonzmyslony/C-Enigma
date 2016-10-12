@@ -5,7 +5,7 @@
 #include "Enigma.h"
 
 
-char Enigma::encodeCharacter(char given)  {
+char Enigma::encodeCharacter(char given) {
     if (!isalpha(given)) {
         throw invalid_argument("received not alpha character");
     }
@@ -21,7 +21,7 @@ char Enigma::encodeCharacter(char given)  {
 }
 
 
-Enigma::Enigma(int **rotorsArray, map<int, int> *plugBoard, int numberOfRotors) {
+Enigma::Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int numberOfRotors) {
     alphabet = *new Alphabet();
     shared_ptr<EnigmaPiece> current;
     shared_ptr<EnigmaPiece> previous;
@@ -38,7 +38,7 @@ Enigma::Enigma(int **rotorsArray, map<int, int> *plugBoard, int numberOfRotors) 
     }
     if (numberOfRotors >= 1) {
         for (int i = 0; i < numberOfRotors; i++) {
-            current.reset(new Rotor(rotorsArray[i]));
+            current.reset(new Rotor(*rotorsArray[i]));
             previous->setNext(current);
             previous = current;
         }

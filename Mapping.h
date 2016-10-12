@@ -12,17 +12,17 @@
 using namespace std;
 
 
-class Mapping : public EnigmaPiece{
+class Mapping : public EnigmaPiece {
 
-public:
 
-    int encode(int index);
-    int decode(int index);
+
+
 
 protected:
+    int encode(int index);
+    int decode(int index);
     map<int, int> mapping;
-
-public:
+   // void update(void);
     Mapping(const map<int, int> &mapping);
 
 };

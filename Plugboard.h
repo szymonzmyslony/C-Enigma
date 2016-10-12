@@ -19,5 +19,4 @@ protected:
 };
 
 
-
 #endif //CENIGMA_SZ6315_PLUGBOARD_H

@@ -14,14 +14,14 @@ using namespace std;
 class ParseFile {
 
 public:
-    ParseFile(int **rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files);
+    ParseFile(map<int, int> **rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files);
 
 private:
-    void updateArrays(char **files, int numberOfRotorsGiven, int **rotorsArray);
-
-    void updateMap(char *file_name, map<int, int> *plugboardMap);
+  //  void updateArrays(char **files, int numberOfRotorsGiven, int **rotorsArray);
 
 
+
+    void updateMap(char *file_name, map<int, int> *map, bool isPlugboard);
 };
 
 

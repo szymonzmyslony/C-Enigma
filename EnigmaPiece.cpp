@@ -18,7 +18,6 @@ void EnigmaPiece::rotate(int previous_latch) {
 }
 
 
-
 int EnigmaPiece::substitute(const int index) {
     return decode(next->substitute(encode(index)));
 }

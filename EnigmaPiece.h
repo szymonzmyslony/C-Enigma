@@ -14,16 +14,18 @@ class EnigmaPiece {
 
 public:
     void setNext(std::shared_ptr<EnigmaPiece> next);
+
     std::shared_ptr<EnigmaPiece> next;
+
     virtual void rotate();
+
     virtual void rotate(int previous_latch);
+
     virtual int substitute(int index);
+
     virtual int encode(int index);
+
     virtual int decode(int index);
-
-
-
-
 
 
 };

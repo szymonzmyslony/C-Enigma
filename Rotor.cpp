@@ -4,7 +4,7 @@
 
 #include "Rotor.h"
 
-Rotor::Rotor(int map[]) : ArrayMap(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR) {
+Rotor::Rotor(map<int, int> map) : Mapping(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR) {
 
 }
 
@@ -16,7 +16,7 @@ void Rotor::rotate() {
     } else {
         latch_position++;
     }
-    update();
+    //update();
     locked = true;
 }
 

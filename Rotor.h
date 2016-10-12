@@ -5,17 +5,17 @@
 #ifndef CENIGMA_SZ6315_ROTOR_H
 #define CENIGMA_SZ6315_ROTOR_H
 #define STARTING_POSITION_OF_ROTOR 1
-#define LAST_POSITION_OF_ROTOR 26
 
 
-#include "ArrayMap.h"
 
-class Rotor : public ArrayMap {
+#include "Mapping.h"
+
+class Rotor : public Mapping {
 private:
     int latch_position;
     bool locked;
 public:
-    Rotor(int arrayMap[]);
+    Rotor(std::map<int, int> map);
 
     void rotate() override;
 

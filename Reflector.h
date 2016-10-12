@@ -6,7 +6,6 @@
 #define CENIGMA_SZ6315_REFLECTOR_H
 
 
-
 #include "EnigmaPiece.h"
 
 class Reflector : public EnigmaPiece {

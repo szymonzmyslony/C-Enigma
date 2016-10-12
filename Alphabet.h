@@ -14,7 +14,6 @@ public:
     Alphabet();
 
 
-
     const char &getCharacter(int index);
 
     const int &getIndex(char character);
@@ -23,8 +22,6 @@ public:
 
 
 };
-
-
 
 
 #endif //CENIGMA_SZ6315_CODABLE_H
