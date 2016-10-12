@@ -10,7 +10,7 @@
 
 #include "ArrayMap.h"
 
-class Rotor : public ArrayMap{
+class Rotor : public ArrayMap {
 private:
     int latch_position;
     bool locked;

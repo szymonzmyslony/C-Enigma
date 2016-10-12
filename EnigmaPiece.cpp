@@ -3,7 +3,6 @@
 //
 
 #include "Mapping.h"
-#include "EnigmaPiece.h"
 
 void EnigmaPiece::setNext(const EnigmaPiece &next) {
     EnigmaPiece::next = next;
@@ -19,5 +18,6 @@ void EnigmaPiece::rotate(int previous_latch) {
 }
 
 int EnigmaPiece::substitute(const int index) {
-    return  decode(next.substitute(encode(index)));
+    return decode(next.substitute(encode(index)));
 }
+

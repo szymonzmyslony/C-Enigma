@@ -12,11 +12,12 @@
 using namespace std;
 
 
-
 class Mapping : public EnigmaPiece {
 protected:
     map<int, int> mapping;
+
     int encode(int index);
+
     int decode(int index);
 
 

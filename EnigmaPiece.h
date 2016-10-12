@@ -11,16 +11,21 @@
 class EnigmaPiece {
 public:
     void setNext(const EnigmaPiece &next);
-    virtual int substitute(int index);
 
+    virtual int substitute(int index);
 
 
 protected:
     EnigmaPiece next;
+
     virtual void rotate();
+
     virtual void rotate(int previous_latch);
-    Alphabet alphabet;
+
+    Alphabet alphabet = *new Alphabet();
+
     virtual int encode(int index);
+
     virtual int decode(int index);
 
 

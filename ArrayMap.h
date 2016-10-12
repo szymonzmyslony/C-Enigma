@@ -8,12 +8,16 @@
 
 #include "EnigmaPiece.h"
 
-class ArrayMap: public EnigmaPiece{
+class ArrayMap : public EnigmaPiece {
 protected:
     int arrayMapping[];
+
     int encode(int index);
+
     int decode(int index);
+
     void update(void);
+
     const int array_length = ALPHABET_LENGTH;
 
 };

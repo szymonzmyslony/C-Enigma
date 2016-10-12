@@ -10,7 +10,7 @@
 
 class Plugboard : Mapping {
 public:
-    Plugboard(map<int, int> map);
+    Plugboard(std::map<int, int> map);
 
 private:
     virtual int substitute(int index) override;

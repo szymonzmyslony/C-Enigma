@@ -5,5 +5,5 @@
 #include "Plugboard.h"
 
 
-Plugboard::Plugboard(map<int, int> map): mapping(map){}
+Plugboard::Plugboard(map<int, int> map) : mapping(map) {}
 

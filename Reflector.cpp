@@ -5,7 +5,7 @@
 #include "Reflector.h"
 
 const int Reflector::mappingFunction(int x) {
-    return (x+13)%26;
+    return (x + 13) % 26;
 }
 
 const int Reflector::inverseMapping(int x) {

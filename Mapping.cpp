@@ -6,12 +6,12 @@
 
 int Mapping::encode(int index) {
     map<int, int>::iterator it = mapping.find(index);
-    if(it != mapping.end()) {
+    if (it != mapping.end()) {
         return it->second;
     }
     return index;
 
-    }
+}
 
 int Mapping::decode(int index) {
     return encode(encode(index));

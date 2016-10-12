@@ -14,7 +14,7 @@ int ArrayMap::decode(int index) {
 }
 
 void ArrayMap::update(void) {
-    for (int i = 0; i<array_length; i++){
+    for (int i = 0; i < array_length; i++) {
         arrayMapping[i] = alphabet.shift(i);
     }
 }
