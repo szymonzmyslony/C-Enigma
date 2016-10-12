@@ -17,9 +17,10 @@ private:
 public:
     Rotor(int arrayMap[]);
 
-    virtual void rotate() override;
+    void rotate() override;
 
-    virtual void rotate(int previous_latch) override;
+
+    void rotate(int previous_latch) override;
 };
 
 

@@ -16,11 +16,11 @@ private:
     const int inverseMapping(int x);
 
 public:
-    int encode(int index) override;
+    int encode(int index);
 
     int substitute(int index) override;
 
-    int decode(int index) override;
+    int decode(int index);
 
 };
 

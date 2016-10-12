@@ -11,12 +11,13 @@
 #include "EnigmaPiece.h"
 #include "Alphabet.h"
 #include "Rotor.h"
-#include "EnigmaPiece.h"
 #include "Reflector.h"
 #include "Plugboard.h"
+
 #include <map>
 
 class Enigma : public EnigmaPiece {
+
 public:
     char encodeCharacter(char toBeEncodded);
 

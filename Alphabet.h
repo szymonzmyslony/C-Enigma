@@ -13,6 +13,8 @@ class Alphabet {
 public:
     Alphabet();
 
+
+
     const char &getCharacter(int index);
 
     const int &getIndex(char character);

@@ -2,7 +2,7 @@
 // Created by szymon on 11.10.16.
 //
 
-#include <fstream>
+
 #include "ParseFile.h"
 
 ParseFile::ParseFile(int **rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files) {
@@ -25,8 +25,6 @@ void ParseFile::updateArrays(char **files, int numberOfRotors, int **rotorsArray
         for (int i = 0; i < ALPHABET_LENGTH - 1; i++) {
             file >> value;
             rotorsArray[j][i] = value;
-
-
         }
         file.close();
 
@@ -41,7 +39,6 @@ void ParseFile::updateMap(char *file_name, map<int, int> *plugboardMap) {
     int value;
     while (!file.eof()) {
         file >> key >> value;
-
         plugboardMap->insert(make_pair(key,value));
         plugboardMap->insert(make_pair(value,key));
     }

@@ -9,20 +9,16 @@
 #include "EnigmaPiece.h"
 
 class ArrayMap : public EnigmaPiece {
-public:
-
-
-    int arrayMapping[];
-
+protected:
     int encode(int index);
-
     int decode(int index);
-
     void update(void);
-
-
     const int array_length = ALPHABET_LENGTH;
-private:
+
+    ArrayMap(int *arrayMapping);
+
+
+    int* arrayMapping;
 
 };
 

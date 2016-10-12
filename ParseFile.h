@@ -7,6 +7,7 @@
 
 #include "Alphabet.h"
 #include "map"
+#include <fstream>
 
 using namespace std;
 

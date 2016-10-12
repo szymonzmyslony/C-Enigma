@@ -13,7 +13,8 @@ public:
     Plugboard(std::map<int, int> map);
 
 protected:
-    virtual int substitute(int index) override;
+    int substitute(int index);
+
 
 };
 

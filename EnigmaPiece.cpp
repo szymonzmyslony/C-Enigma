@@ -23,3 +23,11 @@ int EnigmaPiece::substitute(const int index) {
     return decode(next->substitute(encode(index)));
 }
 
+int EnigmaPiece::encode(int index) {
+    return 0;
+}
+
+int EnigmaPiece::decode(int index) {
+    return 0;
+}
+

@@ -9,22 +9,18 @@
 #include <memory>
 #include "Alphabet.h"
 
+
 class EnigmaPiece {
+
 public:
-    EnigmaPiece();
     void setNext(std::shared_ptr<EnigmaPiece> next);
-
-    virtual int substitute(int index);
-
-    virtual int encode(int index);
-
-    virtual int decode(int index);
-
-
-protected:
     std::shared_ptr<EnigmaPiece> next;
     virtual void rotate();
     virtual void rotate(int previous_latch);
+    virtual int substitute(int index);
+    virtual int encode(int index);
+    virtual int decode(int index);
+
 
 
 

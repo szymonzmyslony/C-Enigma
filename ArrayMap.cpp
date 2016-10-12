@@ -30,3 +30,5 @@ void ArrayMap::update(void) {
 
     arrayMapping[0] = temp;
 }
+
+ArrayMap::ArrayMap(int *arrayMapping) : arrayMapping(arrayMapping) {}

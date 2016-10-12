@@ -12,12 +12,18 @@
 using namespace std;
 
 
-class Mapping : public EnigmaPiece {
+class Mapping : public EnigmaPiece{
+
 public:
-    map<int, int> mapping;
+
     int encode(int index);
     int decode(int index);
 
+protected:
+    map<int, int> mapping;
+
+public:
+    Mapping(const map<int, int> &mapping);
 
 };
 

@@ -17,3 +17,5 @@ int Mapping::decode(int index) {
     return encode(encode(index));
 }
 
+Mapping::Mapping(const map<int, int> &mapping) : mapping(mapping) {}
+
