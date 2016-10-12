@@ -21,7 +21,7 @@ public:
     char encode(char toBeEncodded);
 
 private:
-    Alphabet alphabet1;
+    Alphabet alphabet;
 
 
 public:

@@ -18,6 +18,3 @@ const int &Alphabet::shift(int index) {
     return ((index + SHIFT_POSITION) % (ALPHABET_LENGTH - 1));
 }
 
-
-
-

@@ -11,16 +11,18 @@
 
 class Alphabet {
 public:
+    Alphabet();
+
     const char &getCharacter(int index);
 
     const int &getIndex(char character);
 
     const int &shift(int index);
 
-private:
-    const char alpabet[] = "abcdefghijklmnopqrstuvwxyz";
 
 };
+
+
 
 
 #endif //CENIGMA_SZ6315_CODABLE_H

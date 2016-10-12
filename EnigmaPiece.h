@@ -10,14 +10,13 @@
 
 class EnigmaPiece {
 public:
-    void setNext(const EnigmaPiece &next);
+    void setNext(EnigmaPiece *next);
 
     virtual int substitute(int index);
 
 
 protected:
-    EnigmaPiece next;
-
+    EnigmaPiece* next;
     virtual void rotate();
 
     virtual void rotate(int previous_latch);

@@ -12,14 +12,11 @@ class Plugboard : Mapping {
 public:
     Plugboard(std::map<int, int> map);
 
-private:
+protected:
     virtual int substitute(int index) override;
 
 };
 
-int Plugboard::substitute(int index) {
-    next.rotate();
-    return EnigmaPiece::substitute(index);
-}
+
 
 #endif //CENIGMA_SZ6315_PLUGBOARD_H
