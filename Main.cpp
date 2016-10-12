@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     Enigma *enigma = new Enigma(arrayForRotors, mapForPlugboard, argc - 2);
     char toBeEncoded;
     while (cin >> toBeEncoded) {
-        cout << (enigma->encode(toBeEncoded));
+        cout << (enigma->encodeCharacter(toBeEncoded));
 
     }
     delete (&enigma);

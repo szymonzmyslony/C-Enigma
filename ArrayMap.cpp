@@ -5,16 +5,28 @@
 #include "ArrayMap.h"
 
 int ArrayMap::encode(int index) {
-    //TODO
+
     return arrayMapping[index];
 }
 
 int ArrayMap::decode(int index) {
-    return EnigmaPiece::decode(index);
+    for (int i = 0; i++; i<ALPHABET_LENGTH){
+        if (arrayMapping[i]==index){
+            return i;
+        }
+
+
+    }
+    return index;
 }
 
 void ArrayMap::update(void) {
-    for (int i = 0; i < array_length; i++) {
-        arrayMapping[i] = alphabet.shift(i);
+    int temp = arrayMapping[0];
+
+    for (int i = 1; i < array_length; i++) {
+            arrayMapping[(i)%ALPHABET_LENGTH] = temp;
+            temp = arrayMapping[(i+1)/ALPHABET_LENGTH];
     }
+
+    arrayMapping[0] = temp;
 }

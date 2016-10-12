@@ -6,7 +6,7 @@
 #define CENIGMA_SZ6315_REFLECTOR_H
 
 
-#include "Alphabet.h"
+
 #include "EnigmaPiece.h"
 
 class Reflector : public EnigmaPiece {
@@ -15,7 +15,7 @@ private:
 
     const int inverseMapping(int x);
 
-protected:
+public:
     int encode(int index) override;
 
     int substitute(int index) override;

@@ -13,11 +13,9 @@ using namespace std;
 
 
 class Mapping : public EnigmaPiece {
-protected:
+public:
     map<int, int> mapping;
-
     int encode(int index);
-
     int decode(int index);
 
 

@@ -16,9 +16,9 @@
 #include "Plugboard.h"
 #include <map>
 
-class Enigma : EnigmaPiece {
+class Enigma : public EnigmaPiece {
 public:
-    char encode(char toBeEncodded);
+    char encodeCharacter(char toBeEncodded);
 
 private:
     Alphabet alphabet;

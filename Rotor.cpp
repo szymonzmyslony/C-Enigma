@@ -4,10 +4,13 @@
 
 #include "Rotor.h"
 
-Rotor::Rotor(int map[]) : arrayMapping(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR) {}
+Rotor::Rotor(int map[]) : arrayMapping(map), locked(true), latch_position(STARTING_POSITION_OF_ROTOR) {
+
+}
 
 void Rotor::rotate() {
-    next.rotate(latch_position);
+
+    next->rotate(latch_position);
     if (latch_position == ALPHABET_LENGTH) {
         latch_position = STARTING_POSITION_OF_ROTOR;
     } else {
@@ -19,7 +22,7 @@ void Rotor::rotate() {
 
 void Rotor::rotate(int previous_latch) {
     if (previous_latch == latch_position && !locked) {
-        rotate();
+        this->rotate();
     } else {
         locked = true;
     }

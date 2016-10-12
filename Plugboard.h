@@ -8,7 +8,7 @@
 
 #include "Mapping.h"
 
-class Plugboard : Mapping {
+class Plugboard : public Mapping {
 public:
     Plugboard(std::map<int, int> map);
 

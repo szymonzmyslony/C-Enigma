@@ -41,8 +41,9 @@ void ParseFile::updateMap(char *file_name, map<int, int> *plugboardMap) {
     int value;
     while (!file.eof()) {
         file >> key >> value;
-        plugboardMap->insert(key, value);
-        plugboardMap->insert(value, key);
+
+        plugboardMap->insert(make_pair(key,value));
+        plugboardMap->insert(make_pair(value,key));
     }
     file.close();
 
