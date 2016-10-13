@@ -15,14 +15,14 @@ using namespace std;
 class Mapping : public EnigmaPiece {
 
 
-
-
-
 protected:
     int encode(const int index);
+
     int decode(int index);
+
     map<int, int> mapping;
-   // void update(void);
+
+    // void update(void);
     Mapping(const map<int, int> &mapping);
 
 };

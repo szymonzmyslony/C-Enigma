@@ -18,7 +18,15 @@ int Mapping::encode(const int index) {
 }
 
 int Mapping::decode(int index) {
-    return encode(encode(index));
+    map<int, int>::iterator it;
+    for (it = mapping.begin(); it != mapping.end(); ++it) {
+        if (it->second == index) {
+            return it->first;
+
+        }
+    }
+
+    return index;
 }
 
 Mapping::Mapping(const map<int, int> &mapping) : mapping(mapping) {}

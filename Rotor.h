@@ -7,7 +7,6 @@
 #define STARTING_POSITION_OF_ROTOR 1
 
 
-
 #include "Mapping.h"
 
 class Rotor : public Mapping {

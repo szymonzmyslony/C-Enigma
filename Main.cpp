@@ -8,12 +8,12 @@ using namespace std;
 
 int main(int argc, char **argv) {
     map<int, int> *mapsforRotors = new map<int, int>[1];
-    map<int, int>* mapForPlugboard = (new map<int, int>);
+    map<int, int> *mapForPlugboard = (new map<int, int>);
 
     ParseFile *parseFile = new ParseFile(&mapsforRotors, mapForPlugboard, argc - 1, argv);
-   // delete (parseFile);
+    // delete (parseFile);
     Enigma *enigma = new Enigma(mapsforRotors, mapForPlugboard, argc - 1);
-   // delete(mapsforRotors);
+    // delete(mapsforRotors);
     //delete(&mapForPlugboard);
     char toBeEncoded;
 

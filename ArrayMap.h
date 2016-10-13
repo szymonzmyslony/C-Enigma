@@ -11,9 +11,13 @@
 class ArrayMap : public EnigmaPiece {
 protected:
     int encode(int index);
+
     int decode(int index);
+
     void update(void);
+
     ArrayMap(int *arrayMapping);
+
     int *arrayMapping;
 };
 

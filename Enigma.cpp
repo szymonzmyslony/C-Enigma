@@ -24,35 +24,40 @@ char Enigma::encodeCharacter(char given) {
 }
 
 
-Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles): EnigmaPiece() {
+Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles) : EnigmaPiece() {
     alphabet = *new Alphabet();
-    shared_ptr<EnigmaPiece> current(new Plugboard(*plugBoard));
+    shared_ptr<EnigmaPiece> current(new EnigmaPiece());
 
-    this->setNext(current);
-   // shared_ptr<EnigmaPiece> previous;
+    shared_ptr<EnigmaPiece> previous(new EnigmaPiece());
     shared_ptr<EnigmaPiece> reflactor(new Reflector());
 
 
-//    if (numberOfFiles==1) {
-//        current.reset(new Plugboard(plugBoard));
-//        this->setNext(current);
-//        previous = current;
-//
-//    } else {
-//       // current.reset(this);
-//        //previous = current;
-//    }
-//    if (numberOfFiles > 1) {
-//        for (int i = 0; i < numberOfFiles; i++) {
-//            current.reset(new Rotor(rotorsArray[i]));
-//            previous->setNext(current);
-//            previous = current;
-//        }
-//    }
+    if (numberOfFiles==1) {
+        current.reset(new Plugboard(*plugBoard));
+        this->setNext(current);
+        previous=current;
+        current.reset(new Reflector());
+        previous->setNext(current);
+
+    } else {
+        current.reset(new Reflector());
+        this->setNext(current);
+
+    }
+    if (numberOfFiles > 1) {
+        for (int i = 0; i < numberOfFiles; i++) {
+            current.reset(new Rotor(rotorsArray[i]));
+            previous->setNext(current);
+            previous = current;
+        }
+        current.reset(new Reflector);
+        previous->setNext(current);
+
+    }
 
 
 
-    current->setNext(reflactor);
+
 
 
 }
