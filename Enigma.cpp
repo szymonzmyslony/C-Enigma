@@ -24,9 +24,10 @@ char Enigma::encodeCharacter(char given) {
 }
 
 
-Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> plugBoard, int numberOfFiles):EnigmaPiece() {
+Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles): EnigmaPiece() {
     alphabet = *new Alphabet();
-    shared_ptr<EnigmaPiece> current(new Plugboard(plugBoard));
+    shared_ptr<EnigmaPiece> current(new Plugboard(*plugBoard));
+
     this->setNext(current);
    // shared_ptr<EnigmaPiece> previous;
     shared_ptr<EnigmaPiece> reflactor(new Reflector());

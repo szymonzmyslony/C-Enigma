@@ -26,7 +26,7 @@ private:
 
 
 public:
-    Enigma(map<int, int> *rotorsArray, map<int, int> plugBoard, int numberOfFiles);
+    Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles);
 
 
 };

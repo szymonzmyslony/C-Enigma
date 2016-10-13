@@ -11,13 +11,14 @@ ParseFile::ParseFile(map<int, int> *rotorsArray[], map<int, int>* plugboardMap, 
     }
     else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], *plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+
     } else {
 
-        updateMap(files[numberOfFilesGiven], *plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], plugboardMap, true);
         for (int i = 1; i<numberOfFilesGiven-1; i++){
             checkIfExists(files[i]);
-            updateMap(files[i], *rotorsArray[numberOfFilesGiven-1-i], false);
+            updateMap(files[i], rotorsArray[numberOfFilesGiven-1-i], false);
             rotorsArray++;
         }
 
@@ -26,7 +27,7 @@ ParseFile::ParseFile(map<int, int> *rotorsArray[], map<int, int>* plugboardMap, 
 }
 
 
-void ParseFile::updateMap(char *file_name, map<int, int> map, bool isPlugboard) {
+void ParseFile::updateMap(char *file_name, map<int, int>* map, bool isPlugboard) {
     ifstream file(file_name, ifstream::in);
     int key;
     int value;
@@ -36,13 +37,13 @@ void ParseFile::updateMap(char *file_name, map<int, int> map, bool isPlugboard) 
         file>>value;
 
 
-        map.insert(make_pair(key, value));
-        map.insert(make_pair(value, key));
+        map->insert(make_pair(key, value));
+        map->insert(make_pair(value, key));
     }}
     else{
         while (!file.eof()) {
             file >> key >> value;
-            map.insert(make_pair(key, value));
+            map->insert(make_pair(key, value));
                }}
 
 
