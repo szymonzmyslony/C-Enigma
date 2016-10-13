@@ -4,11 +4,15 @@
 
 #include "Mapping.h"
 
-int Mapping::encode(int index) {
+int Mapping::encode(const int index) {
+    int lookingfor = index;
+
     map<int, int>::iterator it = mapping.find(index);
     if (it != mapping.end()) {
         return it->second;
     }
+
+
     return index;
 
 }

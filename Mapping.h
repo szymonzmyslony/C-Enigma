@@ -19,7 +19,7 @@ class Mapping : public EnigmaPiece {
 
 
 protected:
-    int encode(int index);
+    int encode(const int index);
     int decode(int index);
     map<int, int> mapping;
    // void update(void);

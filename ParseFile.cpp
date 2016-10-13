@@ -6,18 +6,18 @@
 #include <sys/stat.h>
 #include "ParseFile.h"
 
-ParseFile::ParseFile(map<int, int> *rotorsArray, map<int, int> plugboardMap, int numberOfFilesGiven, char **files) {
+ParseFile::ParseFile(map<int, int> *rotorsArray[], map<int, int>* plugboardMap, int numberOfFilesGiven, char **files) {
     if (numberOfFilesGiven == 0) {
     }
     else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], *plugboardMap, true);
     } else {
 
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], *plugboardMap, true);
         for (int i = 1; i<numberOfFilesGiven-1; i++){
             checkIfExists(files[i]);
-            updateMap(files[i], *rotorsArray, false);
+            updateMap(files[i], *rotorsArray[numberOfFilesGiven-1-i], false);
             rotorsArray++;
         }
 

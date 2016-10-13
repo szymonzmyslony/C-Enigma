@@ -26,28 +26,32 @@ char Enigma::encodeCharacter(char given) {
 
 Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> plugBoard, int numberOfFiles):EnigmaPiece() {
     alphabet = *new Alphabet();
-    shared_ptr<EnigmaPiece> current;
-    shared_ptr<EnigmaPiece> previous;
+    shared_ptr<EnigmaPiece> current(new Plugboard(plugBoard));
+    this->setNext(current);
+   // shared_ptr<EnigmaPiece> previous;
     shared_ptr<EnigmaPiece> reflactor(new Reflector());
 
 
-    if (numberOfFiles==1) {
-        current.reset(new Plugboard(plugBoard));
-        this->setNext(current);
-        previous = current;
+//    if (numberOfFiles==1) {
+//        current.reset(new Plugboard(plugBoard));
+//        this->setNext(current);
+//        previous = current;
+//
+//    } else {
+//       // current.reset(this);
+//        //previous = current;
+//    }
+//    if (numberOfFiles > 1) {
+//        for (int i = 0; i < numberOfFiles; i++) {
+//            current.reset(new Rotor(rotorsArray[i]));
+//            previous->setNext(current);
+//            previous = current;
+//        }
+//    }
 
-    } else {
-       // current.reset(this);
-        //previous = current;
-    }
-    if (numberOfFiles > 1) {
-        for (int i = 0; i < numberOfFiles; i++) {
-            current.reset(new Rotor(rotorsArray[i]));
-            previous->setNext(current);
-            previous = current;
-        }
-    }
-    this->setNext(reflactor);
+
+
+    current->setNext(reflactor);
 
 
 }
