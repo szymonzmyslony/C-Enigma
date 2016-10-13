@@ -9,6 +9,7 @@ Plugboard::Plugboard(map<int, int> map) : Mapping(map) {}
 
 
 int Plugboard::substitute(int index) {
+    update();
     next->rotate();
     return EnigmaPiece::substitute(index);
 }

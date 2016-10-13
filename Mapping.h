@@ -22,7 +22,7 @@ protected:
 
     map<int, int> mapping;
 
-    // void update(void);
+    void update(void);
     Mapping(const map<int, int> &mapping);
 
 };

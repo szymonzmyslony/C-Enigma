@@ -16,7 +16,7 @@ void Rotor::rotate() {
     } else {
         latch_position++;
     }
-    //update();
+    update();
     locked = true;
 }
 
