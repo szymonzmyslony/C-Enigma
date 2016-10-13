@@ -13,6 +13,7 @@ const int Reflector::inverseMapping(int x) {
 }
 
 int Reflector::substitute(int index) {
+
     return mappingFunction(index);
 }
 

@@ -4,13 +4,15 @@
 
 #include "Alphabet.h"
 
-const int &Alphabet::getIndex(char character) {
-    return (character - FIRST_LETTER);
+const int Alphabet::getIndex(char character) {
+    int index = character - FIRST_LETTER;
+
+    return (index);
 
 }
 
-const char &Alphabet::getCharacter(int index) {
-    char character = index;
+const char Alphabet::getCharacter(int index) {
+    char character = index+'a';
     return character;
 }
 

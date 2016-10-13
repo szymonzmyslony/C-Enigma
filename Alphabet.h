@@ -14,9 +14,9 @@ public:
     Alphabet();
 
 
-    const char &getCharacter(int index);
+    const char getCharacter(int index);
 
-    const int &getIndex(char character);
+    const int getIndex(char character);
 
     const int &shift(int index);
 

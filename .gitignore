@@ -3,7 +3,7 @@
 #ignore IDE files
 .idea/
 CMakeLists.txt
-
+*.gch
 
 #ignore temp files
 *~
