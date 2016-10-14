@@ -5,7 +5,6 @@
 #include "Mapping.h"
 
 int Mapping::encode(const int index) {
-    int lookingfor = index;
 
     map<int, int>::iterator it = mapping.find(index);
     if (it != mapping.end()) {
@@ -22,10 +21,8 @@ int Mapping::decode(int index) {
     for (it = mapping.begin(); it != mapping.end(); ++it) {
         if (it->second == index) {
             return it->first;
-
         }
     }
-
     return index;
 }
 

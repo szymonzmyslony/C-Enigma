@@ -7,12 +7,17 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    map<int, int> *mapsforRotors = new map<int, int>[1];
-    map<int, int> *mapForPlugboard = (new map<int, int>);
+    map<int, int>* mapforRotors = new map<int, int>[0];
 
-    ParseFile *parseFile = new ParseFile(&mapsforRotors, mapForPlugboard, argc - 1, argv);
+    if (argc>2){
+        mapforRotors = new map<int, int>[argc - 2];
+    }
+
+    map<int, int> mapForPlugboard = *(new map<int, int>);
+
+    ParseFile *parseFile = new ParseFile(mapforRotors, mapForPlugboard, argc - 1, argv);
     // delete (parseFile);
-    Enigma *enigma = new Enigma(&mapsforRotors, mapForPlugboard, argc - 1);
+    Enigma *enigma = new Enigma(mapforRotors, &mapForPlugboard, argc - 1);
     // delete(mapsforRotors);
     //delete(&mapForPlugboard);
     char toBeEncoded;

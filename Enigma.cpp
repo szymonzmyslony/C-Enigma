@@ -24,12 +24,12 @@ char Enigma::encodeCharacter(char given) {
 }
 
 
-Enigma::Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int numberOfFiles) : EnigmaPiece() {
+Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles) : EnigmaPiece() {
     alphabet = *new Alphabet();
     shared_ptr<EnigmaPiece> current(new EnigmaPiece());
 
     shared_ptr<EnigmaPiece> previous(new EnigmaPiece());
-    shared_ptr<EnigmaPiece> reflactor(new Reflector());
+
 
 
     if (numberOfFiles==1) {
@@ -39,14 +39,17 @@ Enigma::Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int number
         current.reset(new Reflector());
         previous->setNext(current);
 
-    } else {
+    } else if (numberOfFiles==0){
         current.reset(new Reflector());
         this->setNext(current);
-
     }
-    if (numberOfFiles > 1) {
-        for (int i = 0; i < numberOfFiles; i++) {
-            current.reset(new Rotor(*rotorsArray[i]));
+    else {
+        current.reset(new Plugboard(*plugBoard));
+        this->setNext(current);
+        previous=current;
+
+        for (int i = 0; i < numberOfFiles-1; i++) {
+            current.reset(new Rotor(rotorsArray[i]));
             previous->setNext(current);
             previous = current;
         }

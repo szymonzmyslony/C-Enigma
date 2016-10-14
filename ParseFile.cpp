@@ -6,18 +6,18 @@
 
 #include "ParseFile.h"
 
-ParseFile::ParseFile(map<int, int> *rotorsArray[], map<int, int> *plugboardMap, int numberOfFilesGiven, char **files) {
+ParseFile::ParseFile(map<int, int> *rotorsArray, map<int, int> plugboardMap, int numberOfFilesGiven, char **files) {
     if (numberOfFilesGiven == 0) {
     } else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], &plugboardMap, true);
 
     } else {
 
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
-        for (int i = 1; i < numberOfFilesGiven - 1; i++) {
+        updateMap(files[numberOfFilesGiven], &plugboardMap, true);
+        for (int i = 1; i < numberOfFilesGiven; i++) {
             checkIfExists(files[i]);
-            updateMap(files[i], rotorsArray[numberOfFilesGiven - 1 - i], false);
+            updateMap(files[i], &rotorsArray[numberOfFilesGiven - 1 - i], false);
             rotorsArray++;
         }
 
@@ -40,9 +40,11 @@ void ParseFile::updateMap(char *file_name, map<int, int> *map, bool isPlugboard)
             map->insert(make_pair(value, key));
         }
     } else {
+        int i =0;
         while (!file.eof()) {
-            file >> key >> value;
-            map->insert(make_pair(key, value));
+            file >> value;
+            map->insert(make_pair(i, value));
+            i++;
         }
     }
 
