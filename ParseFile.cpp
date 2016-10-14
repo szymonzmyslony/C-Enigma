@@ -6,17 +6,17 @@
 
 #include "ParseFile.h"
 
-ParseFile::ParseFile(map<int, int> *rotorsArray, map<int, int> plugboardMap, int numberOfFilesGiven, char **files) {
+ParseFile::ParseFile(map<int, int> *rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files) {
     if (numberOfFilesGiven == 0) {
     } else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], &plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], plugboardMap, true);
 
     } else {
 
-        updateMap(files[numberOfFilesGiven], &plugboardMap, true);
+        updateMap(files[numberOfFilesGiven], plugboardMap, true);
         for (int i = 1; i < numberOfFilesGiven; i++) {
-            checkIfExists(files[i]);
+            checkIfExists(files[numberOfFilesGiven]);
             updateMap(files[i], &rotorsArray[numberOfFilesGiven - 1 - i], false);
             rotorsArray++;
         }

@@ -29,3 +29,5 @@ void Rotor::rotate(int previous_latch) {
 
 
 }
+
+

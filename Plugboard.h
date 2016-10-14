@@ -12,9 +12,6 @@ class Plugboard : public Mapping {
 public:
     Plugboard(std::map<int, int> map);
 
-protected:
-    int substitute(int index);
-
 
 };
 

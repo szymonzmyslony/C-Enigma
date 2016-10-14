@@ -20,7 +20,7 @@ private:
 
     void updateMap(char *file_name, map<int, int> *map, bool isPlugboard);
 public:
-    ParseFile(map<int, int> *rotorsArray, map<int, int> plugboardMap, int numberOfFilesGiven, char **files);
+    ParseFile(map<int, int> *rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files);
 
 };
 

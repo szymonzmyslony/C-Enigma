@@ -9,7 +9,7 @@ const int Reflector::mappingFunction(int x) {
 }
 
 const int Reflector::inverseMapping(int x) {
-    return mappingFunction(mappingFunction(x));
+    return (26*x-13)%26;
 }
 
 int Reflector::substitute(int index) {

@@ -16,9 +16,6 @@ const char Alphabet::getCharacter(int index) {
     return character;
 }
 
-const int &Alphabet::shift(int index) {
-    return ((index + SHIFT_POSITION) % (ALPHABET_LENGTH - 1));
-}
 
 Alphabet::Alphabet() {}
 

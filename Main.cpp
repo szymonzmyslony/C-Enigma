@@ -13,11 +13,11 @@ int main(int argc, char **argv) {
         mapforRotors = new map<int, int>[argc - 2];
     }
 
-    map<int, int> mapForPlugboard = *(new map<int, int>);
+    map<int, int>* mapForPlugboard = (new map<int, int>);
 
     ParseFile *parseFile = new ParseFile(mapforRotors, mapForPlugboard, argc - 1, argv);
     // delete (parseFile);
-    Enigma *enigma = new Enigma(mapforRotors, &mapForPlugboard, argc - 1);
+    Enigma *enigma = new Enigma(mapforRotors, mapForPlugboard, argc - 1);
     // delete(mapsforRotors);
     //delete(&mapForPlugboard);
     char toBeEncoded;
