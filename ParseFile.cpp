@@ -3,7 +3,7 @@
 //
 
 
-#include <sys/stat.h>
+
 #include "ParseFile.h"
 
 ParseFile::ParseFile(map<int, int> *rotorsArray[], map<int, int> *plugboardMap, int numberOfFilesGiven, char **files) {
@@ -52,7 +52,7 @@ void ParseFile::updateMap(char *file_name, map<int, int> *map, bool isPlugboard)
 
 }
 
-bool ParseFile::checkIfExists(const std::string &name) {
+bool ParseFile::checkIfExists(string name) {
     struct stat buffer;
     if (!stat(name.c_str(), &buffer) == 0) {
         throw std::runtime_error("Could not open file");

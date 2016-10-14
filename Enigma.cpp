@@ -24,7 +24,7 @@ char Enigma::encodeCharacter(char given) {
 }
 
 
-Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles) : EnigmaPiece() {
+Enigma::Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int numberOfFiles) : EnigmaPiece() {
     alphabet = *new Alphabet();
     shared_ptr<EnigmaPiece> current(new EnigmaPiece());
 
@@ -46,7 +46,7 @@ Enigma::Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberO
     }
     if (numberOfFiles > 1) {
         for (int i = 0; i < numberOfFiles; i++) {
-            current.reset(new Rotor(rotorsArray[i]));
+            current.reset(new Rotor(*rotorsArray[i]));
             previous->setNext(current);
             previous = current;
         }

@@ -7,8 +7,6 @@
 void EnigmaPiece::setNext(std::shared_ptr<EnigmaPiece> next) {
 
     EnigmaPiece::next = next;
-
-
 }
 
 EnigmaPiece::EnigmaPiece() : next(nullptr) {}

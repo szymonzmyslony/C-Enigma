@@ -13,7 +13,6 @@
 #include "Rotor.h"
 #include "Reflector.h"
 #include "Plugboard.h"
-
 #include <map>
 
 class Enigma : public EnigmaPiece {
@@ -26,7 +25,7 @@ private:
 
 
 public:
-    Enigma(map<int, int> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles);
+    Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int numberOfFiles);
 
 
 };

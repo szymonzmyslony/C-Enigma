@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 
     ParseFile *parseFile = new ParseFile(&mapsforRotors, mapForPlugboard, argc - 1, argv);
     // delete (parseFile);
-    Enigma *enigma = new Enigma(mapsforRotors, mapForPlugboard, argc - 1);
+    Enigma *enigma = new Enigma(&mapsforRotors, mapForPlugboard, argc - 1);
     // delete(mapsforRotors);
     //delete(&mapForPlugboard);
     char toBeEncoded;
