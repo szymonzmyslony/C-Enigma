@@ -20,6 +20,8 @@ public:
 
 
     void rotate(int previous_latch) override;
+
+    virtual int substitute(int index) override;
 };
 
 

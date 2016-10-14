@@ -13,7 +13,7 @@ ParseFile::ParseFile(map<int, int> *rotorsArray, map<int, int> *plugboardMap, in
         updateMap(files[numberOfFilesGiven], plugboardMap, true);
 
     } else {
-
+        checkIfExists(files[numberOfFilesGiven]);
         updateMap(files[numberOfFilesGiven], plugboardMap, true);
         for (int i = 1; i < numberOfFilesGiven; i++) {
             checkIfExists(files[numberOfFilesGiven]);

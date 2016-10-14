@@ -11,11 +11,12 @@ void EnigmaPiece::setNext(std::shared_ptr<EnigmaPiece> next) {
 
 EnigmaPiece::EnigmaPiece() : next(nullptr) {}
 
-
 void EnigmaPiece::rotate() {
+
 }
 
 void EnigmaPiece::rotate(int previous_latch) {
+
 }
 
 

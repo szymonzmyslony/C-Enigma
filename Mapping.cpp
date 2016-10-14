@@ -7,8 +7,10 @@
 int Mapping::encode(const int index) {
     map<int, int>::iterator it = mapping.find(index);
     if (it != mapping.end()) {
+
         return it->second;
     }
+
     return index;
 
 }
