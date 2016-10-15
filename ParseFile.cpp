@@ -4,61 +4,77 @@
 
 
 
+
 #include "ParseFile.h"
 
-ParseFile::ParseFile(map<int, int> **rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files) {
 
-   // map<int, int> *mapforRotors = *rotorsArray;
-    map<int, int>**rot = rotorsArray;
+ParseFile::ParseFile(int numberOfFilesGiven, char **files) {
+
+    map<int, int> ble;
+
+    int bled = 0;
     if (numberOfFilesGiven == 0) {
     } else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+        arrayForMaps = updateMap(files[numberOfFilesGiven], arrayForMaps, true);
 
     } else {
 
+        checkIfExists(files[numberOfFilesGiven]);
+        arrayForMaps = updateMap(files[numberOfFilesGiven], arrayForMaps, true);
+
         for (int i = 1; i < numberOfFilesGiven; i++) {
             checkIfExists(files[i]);
-            updateMap(files[i], *rotorsArray, false);
-            rotorsArray++;
-        }
+            arrayForMaps = updateMap(files[i], arrayForMaps, false);
 
-        checkIfExists(files[numberOfFilesGiven]);
-        updateMap(files[numberOfFilesGiven], plugboardMap, true);
+        }
 
 
     }
 
-    rotorsArray=rot;
 
 }
 
+const vector<map<int, int>> &ParseFile::getArrayForMaps() const {
+    return arrayForMaps;
+}
 
-void ParseFile::updateMap(char *file_name, map<int, int> *map, bool isPlugboard) {
+
+vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>> map, bool isPlugboard) {
     ifstream file(file_name, ifstream::in);
+    std::map<int, int> mapResult;
     int key;
     int value;
     if (isPlugboard) {
+
         while (!file.eof()) {
             file >> key;
             file >> value;
-            map->insert(make_pair(key, value));
-            map->insert(make_pair(value, key));
+            mapResult.insert(make_pair(key, value));
+            mapResult.insert(make_pair(value, key));
         }
+        map.push_back(mapResult);
+
+
+        int temp = 0;
     } else {
-        int i =0;
+
+        int i = 0;
         while (!file.eof()) {
             file >> value;
-            map->insert(make_pair(i, value));
+            mapResult.insert(make_pair(i, value));
             i++;
         }
+        map.push_back(mapResult);
     }
 
 
     file.close();
+    return map;
 
 
 }
+
 
 bool ParseFile::checkIfExists(string name) {
     struct stat buffer;
@@ -67,3 +83,10 @@ bool ParseFile::checkIfExists(string name) {
     }
     return true;
 }
+
+
+
+//void ParseFile::updateMap(char *file_name, vector<map < int, int>) {
+//
+//}
+

@@ -7,24 +7,26 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    map<int, int> *mapforRotors = new map<int, int>[argc - 2];
+
+
 
 //    if (argc>2){
 //        mapforRotors[argc-2] = new map<int, int>[argc - 2];
 //    }
 
-    map<int, int>* mapForPlugboard =  new map<int, int>[1];
 
-    ParseFile *parseFile = new ParseFile(&mapforRotors, mapForPlugboard, argc - 1, argv);
-    // delete (parseFile);
-    Enigma *enigma = new Enigma(&mapforRotors, mapForPlugboard, argc - 1);
+    ParseFile *parseFile = new ParseFile(argc - 1, argv);
+//    //delete (parseFile);
+    vector<map<int, int>> arrayForMaps = parseFile->getArrayForMaps();
+
+    Enigma *enigma = new Enigma(&arrayForMaps, argc - 1);
     // delete(mapsforRotors);
     //delete(&mapForPlugboard);
     char toBeEncoded;
 
     while (cin >> toBeEncoded) {
         cout << (enigma->encodeCharacter(toBeEncoded));
-    }
+   }
   //  delete (enigma);
 
 

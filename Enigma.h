@@ -18,6 +18,8 @@
 class Enigma : public EnigmaPiece {
 
 public:
+    Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles);
+
     char encodeCharacter(char toBeEncodded);
 
 private:
@@ -25,7 +27,7 @@ private:
 
 
 public:
-    Enigma(map<int, int> **rotorsArray, map<int, int> *plugBoard, int numberOfFiles);
+    Enigma(vector<map<int, int>> *rotorsArray, map<int, int> *plugBoard, int numberOfFiles);
 
 
 };

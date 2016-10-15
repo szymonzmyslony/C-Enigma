@@ -9,6 +9,8 @@
 #include "map"
 #include <fstream>
 #include <sys/stat.h>
+#include <vector>
+
 using namespace std;
 
 class ParseFile {
@@ -17,12 +19,20 @@ private:
     //  void updateArrays(char **files, int numberOfRotorsGiven, int **rotorsArray);
 
     bool checkIfExists(string name);
+    vector<map<int, int>> arrayForMaps;
 
-    void updateMap(char *file_name, map<int, int> *map, bool isPlugboard);
+
 public:
-    ParseFile(map<int, int> **rotorsArray, map<int, int> *plugboardMap, int numberOfFilesGiven, char **files);
+    ParseFile(int numberOfFilesGiven, char **files);
+    vector<std::map<int, int>> updateMap(char *file_name, vector<std::map<int, int>> map, bool isPlugboard);
 
+    const vector<map<int, int>> &getArrayForMaps() const;
+
+
+    // void updateMap(char *file_name, vector<map<int, int>> *map, bool isPlugboard);
 };
 
 
 #endif //CENIGMA_SZ6315_PARSEFILE_H
+
+
