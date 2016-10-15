@@ -12,6 +12,8 @@ class Plugboard : public Mapping {
 public:
     Plugboard(std::map<int, int> map);
 
+    virtual int substitute(int index) override;
+
 
 };
 
