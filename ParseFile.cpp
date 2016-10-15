@@ -55,8 +55,6 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
         }
         map.push_back(mapResult);
 
-
-        int temp = 0;
     } else {
 
         int i = 0;
@@ -64,6 +62,9 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
             file >> value;
             mapResult.insert(make_pair(i, value));
             i++;
+            if (i>25){
+                break;
+            }
         }
         map.push_back(mapResult);
     }
