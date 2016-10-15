@@ -36,7 +36,7 @@ void Mapping::update(void) {
         current_key=it->first;
         current_value=it->second;
         if (current_key==0){
-            current_key=26;
+            current_key=25;
         }
         replacement.insert(make_pair((current_key-1)%(ALPHABET_LENGTH-1), current_value));
             }
