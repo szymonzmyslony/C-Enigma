@@ -15,6 +15,8 @@ private:
     const int inverseMapping(int x);
 
 public:
+    Reflector();
+
     int encode(int index);
 
     int substitute(int index) override;

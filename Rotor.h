@@ -4,7 +4,7 @@
 
 #ifndef CENIGMA_SZ6315_ROTOR_H
 #define CENIGMA_SZ6315_ROTOR_H
-#define STARTING_POSITION_OF_ROTOR 1
+#define STARTING_POSITION_OF_ROTOR 0
 
 
 #include "Mapping.h"

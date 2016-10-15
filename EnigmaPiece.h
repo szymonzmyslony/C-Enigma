@@ -15,6 +15,8 @@ class EnigmaPiece {
 public:
     EnigmaPiece();
 
+
+
     void setNext(std::shared_ptr<EnigmaPiece> next);
 
     std::shared_ptr<EnigmaPiece> next;

@@ -29,12 +29,16 @@ int Mapping::decode(int index) {
 void Mapping::update(void) {
     map<int, int>::iterator it;
     map<int, int> replacement = *new map<int, int>;
-
-
-    for (it = (mapping.begin()++); it != mapping.end(); ++it) {
-        int current_key = it->first;
-        int current_value = it->second;
-        replacement.insert(make_pair((current_key+1)%(ALPHABET_LENGTH-1), current_value));
+    int current_value;
+    int current_key;
+    int next_value;
+    for (it = (mapping.begin()); it != mapping.end(); ++it) {
+        current_key=it->first;
+        current_value=it->second;
+        if (current_key==0){
+            current_key=26;
+        }
+        replacement.insert(make_pair((current_key-1)%(ALPHABET_LENGTH-1), current_value));
             }
     mapping=replacement;
 

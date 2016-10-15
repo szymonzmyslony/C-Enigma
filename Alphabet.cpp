@@ -6,9 +6,7 @@
 
 const int Alphabet::getIndex(char character) {
     int index = character - FIRST_LETTER;
-
-    return (index);
-
+    return index;
 }
 
 const char Alphabet::getCharacter(int index) {

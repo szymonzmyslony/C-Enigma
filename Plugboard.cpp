@@ -5,9 +5,15 @@
 #include "Plugboard.h"
 
 
-Plugboard::Plugboard(map<int, int> map) : Mapping(map) {}
+Plugboard::Plugboard(map<int, int> map) : Mapping(map), has_it_started(true) {}
 
 int Plugboard::substitute(int index) {
-    next->rotate();
+    if (has_it_started){
+        has_it_started = false;
     return EnigmaPiece::substitute(index);
+    }
+    else{
+        next->rotate();
+        return EnigmaPiece::substitute(index);
+    }
 }

@@ -9,22 +9,17 @@ Rotor::Rotor(map<int, int> map) : Mapping(map), locked(true), latch_position(STA
 }
 
 void Rotor::rotate() {
-
-    next->rotate(latch_position);
-    if (latch_position == ALPHABET_LENGTH) {
-        latch_position = STARTING_POSITION_OF_ROTOR;
-    } else {
-        latch_position++;
-    }
+    next->rotate((latch_position+1)%ALPHABET_LENGTH);
+    latch_position=(latch_position+1)%(ALPHABET_LENGTH);
     update();
-    locked = true;
+  //  locked = true;
 }
 
 void Rotor::rotate(int previous_latch) {
-    if (previous_latch == latch_position && !locked) {
+    if (previous_latch == latch_position) {
         this->rotate();
     } else {
-        locked = true;
+
     }
 
 

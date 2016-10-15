@@ -25,3 +25,4 @@ int Reflector::decode(int index) {
     return inverseMapping(index);
 }
 
+Reflector::Reflector(){}

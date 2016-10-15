@@ -13,7 +13,7 @@ public:
     Plugboard(std::map<int, int> map);
 
     virtual int substitute(int index) override;
-
+    bool has_it_started;
 
 };
 

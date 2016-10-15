@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
     while (cin >> toBeEncoded) {
         cout << (enigma->encodeCharacter(toBeEncoded));
     }
-    delete (enigma);
+  //  delete (enigma);
 
 
 }
