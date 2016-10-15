@@ -30,9 +30,3 @@ void Rotor::rotate(int previous_latch) {
 
 }
 
-int Rotor::substitute(int index) {
-
-    int a = EnigmaPiece::substitute(index);
-    rotate();
-    return a;
-}
