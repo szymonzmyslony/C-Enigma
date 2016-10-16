@@ -7,6 +7,9 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+    if (argc==0){
+        throw exception();
+    }
 
 
     ParseFile *parseFile = new ParseFile(argc - 1, argv);
