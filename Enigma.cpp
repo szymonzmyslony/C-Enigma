@@ -6,7 +6,7 @@
 
 
 char Enigma::encodeCharacter(char given) {
-    if (!isalpha(given)) {
+    if (!isalpha(given)||!isupper(given)) {
         throw invalid_argument("received not alpha character");
     }
     bool isUpper = isupper(given);
