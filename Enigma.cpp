@@ -28,26 +28,24 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
     alphabet = *new Alphabet();
     shared_ptr<EnigmaPiece> current(new EnigmaPiece());
     shared_ptr<EnigmaPiece> previous(new EnigmaPiece());
-    if (numberOfFiles==0){
+    if (numberOfFiles == 0) {
         current.reset(new Reflector());
         this->setNext(current);
-    }
-    else if (numberOfFiles==1){
+    } else if (numberOfFiles == 1) {
         current.reset(new Plugboard(mapsArray->front()));
         this->setNext(current);
-        previous=current;
+        previous = current;
         current.reset(new Reflector());
         previous->setNext(current);
-    }
-    else{
+    } else {
         current.reset(new Plugboard(mapsArray->front()));
         this->setNext(current);
-        previous=current;
+        previous = current;
 
 
-        vector<map<int,int>>::iterator it = mapsArray->begin();
+        vector<map<int, int>>::iterator it = mapsArray->begin();
         it++;
-        for(it; it!=mapsArray->end(); ++it) {
+        for (it; it != mapsArray->end(); ++it) {
             current.reset(new Rotor(*it));
             previous->setNext(current);
             previous = current;
@@ -59,13 +57,6 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
 
 
     }
-
-
-
-
-
-
-
 
 
 }

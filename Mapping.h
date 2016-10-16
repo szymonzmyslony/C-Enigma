@@ -18,8 +18,11 @@ private:
     map<int, int> mapping;
 protected:
     int encode(const int index);
+
     int decode(int index);
+
     void update(void);
+
     Mapping(const map<int, int> &mapping);
 
 };

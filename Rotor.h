@@ -19,6 +19,7 @@ protected:
 
 public:
     Rotor(std::map<int, int> map);
+
     void rotate() override;
 };
 

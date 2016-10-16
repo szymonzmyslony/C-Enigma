@@ -15,4 +15,4 @@ int Reflector::substitute(int index) {
 }
 
 
-Reflector::Reflector(){}
+Reflector::Reflector() {}

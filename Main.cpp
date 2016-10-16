@@ -7,7 +7,7 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-    if (argc==0){
+    if (argc == 1) {
         throw exception();
     }
 
@@ -18,10 +18,9 @@ int main(int argc, char **argv) {
     char toBeEncoded;
     while (cin >> toBeEncoded) {
         cout << (enigma->encodeCharacter(toBeEncoded));
-   }
+    }
     delete (enigma);
     delete (parseFile);
-
 
 
 }

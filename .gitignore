@@ -8,6 +8,7 @@ enigma
 CMakeLists.txt
 *.gch
 
+
 #ignore temp files
 *~
 

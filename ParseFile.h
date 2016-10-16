@@ -10,17 +10,21 @@
 #include <fstream>
 #include <sys/stat.h>
 #include <vector>
+
 using namespace std;
 
 class ParseFile {
 
 private:
-     bool checkIfExists(string name);
+    bool checkIfExists(string name);
+
     vector<map<int, int>> arrayForMaps;
+
     vector<std::map<int, int>> updateMap(char *file_name, vector<std::map<int, int>> map, bool isPlugboard);
 
 public:
     ParseFile(int numberOfFilesGiven, char **files);
+
     const vector<map<int, int>> &getArrayForMaps() const;
 };
 

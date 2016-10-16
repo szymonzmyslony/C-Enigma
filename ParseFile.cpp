@@ -47,7 +47,7 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
             file >> value;
             mapResult.insert(make_pair(i, value));
             i++;
-            if (i>25){
+            if (i > 25) {
                 break;
             }
         }
