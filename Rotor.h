@@ -12,7 +12,7 @@
 class Rotor : public Mapping {
 private:
     int latch_position;
-
+    bool locked;
 protected:
 
     void rotate(int previous_latch) override;

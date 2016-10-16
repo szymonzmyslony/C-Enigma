@@ -32,7 +32,7 @@ void Mapping::update(void) {
     for (it = (mapping.begin()); it != mapping.end(); ++it) {
         current_key = it->first;
         current_value = it->second;
-        replacement.insert(make_pair((current_key + ALPHABET_LENGTH - 1) % ALPHABET_LENGTH, current_value));
+        replacement.insert(make_pair((current_key + ALPHABET_LENGTH - 1) % ALPHABET_LENGTH, (current_value + ALPHABET_LENGTH - 1) % ALPHABET_LENGTH ));
     }
     mapping=replacement;
 }
