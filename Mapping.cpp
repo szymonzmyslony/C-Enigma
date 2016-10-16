@@ -23,20 +23,6 @@ int Mapping::decode(int index) {
 }
 
 
-void Mapping::update(void) {
-    map<int, int>::iterator it;
-    map<int, int> replacement = *new map<int, int>;
-    int current_value;
-    int current_key;
-    int next_value;
-    for (it = (mapping.begin()); it != mapping.end(); ++it) {
-        current_key = it->first;
-        current_value = it->second;
-        replacement.insert(make_pair((current_key + ALPHABET_LENGTH - 1) % ALPHABET_LENGTH,
-                                     (current_value + ALPHABET_LENGTH - 1) % ALPHABET_LENGTH));
-    }
-    mapping = replacement;
-}
 
 Mapping::Mapping(const map<int, int> &mapping) : mapping(mapping) {}
 

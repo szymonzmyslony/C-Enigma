@@ -13,9 +13,14 @@ class Rotor : public Mapping {
 private:
     int latch_position;
     bool locked;
-protected:
+    map<int, int> inverseMapping;
+    protected:
 
     void rotate(int previous_latch) override;
+
+    virtual int encode(const int index) override;
+
+    virtual int decode(int index) override;
 
 public:
     Rotor(std::map<int, int> map);
