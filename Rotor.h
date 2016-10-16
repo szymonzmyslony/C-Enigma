@@ -12,16 +12,14 @@
 class Rotor : public Mapping {
 private:
     int latch_position;
-    bool locked;
-public:
-    Rotor(std::map<int, int> map);
 
-    void rotate() override;
-
+protected:
 
     void rotate(int previous_latch) override;
 
-
+public:
+    Rotor(std::map<int, int> map);
+    void rotate() override;
 };
 
 

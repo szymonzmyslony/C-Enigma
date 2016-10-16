@@ -12,16 +12,11 @@ class Reflector : public EnigmaPiece {
 private:
     const int mappingFunction(int x);
 
-    const int inverseMapping(int x);
-
 public:
     Reflector();
 
-    int encode(int index);
-
+protected:
     int substitute(int index) override;
-
-    int decode(int index);
 
 };
 

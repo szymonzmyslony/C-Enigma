@@ -12,26 +12,16 @@
 
 class EnigmaPiece {
 
-public:
-    EnigmaPiece();
-
-
-
-    void setNext(std::shared_ptr<EnigmaPiece> next);
-
+protected:
     std::shared_ptr<EnigmaPiece> next;
-
+public:
     virtual void rotate();
-
     virtual void rotate(int previous_latch);
-
+    EnigmaPiece();
+    void setNext(std::shared_ptr<EnigmaPiece> next);
     virtual int substitute(int index);
-
     virtual int encode(int index);
-
     virtual int decode(int index);
-
-
 };
 
 

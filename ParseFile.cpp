@@ -9,30 +9,18 @@
 
 
 ParseFile::ParseFile(int numberOfFilesGiven, char **files) {
-
-    map<int, int> ble;
-
-    int bled = 0;
     if (numberOfFilesGiven == 0) {
     } else if (numberOfFilesGiven == 1) {
         checkIfExists(files[numberOfFilesGiven]);
         arrayForMaps = updateMap(files[numberOfFilesGiven], arrayForMaps, true);
-
     } else {
-
         checkIfExists(files[numberOfFilesGiven]);
         arrayForMaps = updateMap(files[numberOfFilesGiven], arrayForMaps, true);
-
         for (int i = 1; i < numberOfFilesGiven; i++) {
             checkIfExists(files[i]);
             arrayForMaps = updateMap(files[i], arrayForMaps, false);
-
         }
-
-
     }
-
-
 }
 
 const vector<map<int, int>> &ParseFile::getArrayForMaps() const {
@@ -46,7 +34,6 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
     int key;
     int value;
     if (isPlugboard) {
-
         while (!file.eof()) {
             file >> key;
             file >> value;
@@ -54,9 +41,7 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
             mapResult.insert(make_pair(value, key));
         }
         map.push_back(mapResult);
-
     } else {
-
         int i = 0;
         while (!file.eof()) {
             file >> value;
@@ -68,12 +53,8 @@ vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>
         }
         map.push_back(mapResult);
     }
-
-
     file.close();
     return map;
-
-
 }
 
 
@@ -84,10 +65,4 @@ bool ParseFile::checkIfExists(string name) {
     }
     return true;
 }
-
-
-
-//void ParseFile::updateMap(char *file_name, vector<map < int, int>) {
-//
-//}
 

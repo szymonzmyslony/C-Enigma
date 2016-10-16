@@ -12,7 +12,10 @@ class Plugboard : public Mapping {
 public:
     Plugboard(std::map<int, int> map);
 
+protected:
     virtual int substitute(int index) override;
+
+private:
     bool has_it_started;
 
 };
