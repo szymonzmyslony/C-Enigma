@@ -10,7 +10,7 @@ const int Alphabet::getIndex(char character) {
 }
 
 const char Alphabet::getCharacter(int index) {
-    char character = index + 'a';
+    char character = index + FIRST_LETTER;
     return character;
 }
 

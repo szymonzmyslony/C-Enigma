@@ -10,7 +10,9 @@
 #include "EnigmaPiece.h"
 
 using namespace std;
-
+/*
+ * base class for rotor and plugboard as encoding for both are stored in maps *
+ */
 
 class Mapping : public EnigmaPiece {
 

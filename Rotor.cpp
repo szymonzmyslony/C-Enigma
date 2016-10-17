@@ -4,7 +4,7 @@
 
 #include "Rotor.h"
 
-Rotor::Rotor(map<int, int> map) : Mapping(map), latch_position(STARTING_POSITION_OF_ROTOR), locked(true) {
+Rotor::Rotor(map<int, int> map) : Mapping(map), latch_position(STARTING_POSITION_OF_ROTOR){
     std::map<int, int>::iterator it;
     for (it = map.begin(); it != map.end(); ++it) {
        inverseMapping.insert(make_pair(it->second, it->first));
@@ -27,14 +27,9 @@ int Rotor::decode(int index) {
 void Rotor::rotate() {
     latch_position = ((latch_position + 1) % ALPHABET_LENGTH);
     next->rotate(latch_position);
-    locked = true;
-}
+   }
 
 void Rotor::rotate(int previous_latch) {
-    if (previous_latch == latch_position && !locked) {
+    if (previous_latch == STARTING_POSITION_OF_ROTOR) {
         rotate();
-    } else {
-        locked = false;
-    }
-}
-
+    } }

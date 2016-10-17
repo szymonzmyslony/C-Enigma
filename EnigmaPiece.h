@@ -8,7 +8,9 @@
 
 #include <memory>
 #include "Alphabet.h"
-
+/*
+ * base class for all other components - tells what methods are avaialble
+ */
 
 class EnigmaPiece {
 

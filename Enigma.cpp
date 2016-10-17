@@ -42,7 +42,6 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
         this->setNext(current);
         previous = current;
 
-
         vector<map<int, int>>::iterator it = mapsArray->begin();
         it++;
         for (it; it != mapsArray->end(); ++it) {
@@ -50,11 +49,8 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
             previous->setNext(current);
             previous = current;
         }
-
-
         current.reset(new Reflector);
         previous->setNext(current);
-
 
     }
 

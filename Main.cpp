@@ -11,14 +11,17 @@ int main(int argc, char **argv) {
         throw exception();
     }
 
-
     ParseFile *parseFile = new ParseFile(argc - 1, argv);
     vector<map<int, int>> arrayForMaps = parseFile->getArrayForMaps();
     Enigma *enigma = new Enigma(&arrayForMaps, argc - 1);
-    char toBeEncoded;
-    while (cin >> toBeEncoded) {
-        cout << (enigma->encodeCharacter(toBeEncoded));
+    while (!cin.eof()){
+        string toBeEncoded;
+        cin >> ws >>toBeEncoded;
+        for (char c : toBeEncoded){
+            cout << (enigma->encodeCharacter(c));}
     }
+
+
     delete (enigma);
     delete (parseFile);
 

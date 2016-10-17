@@ -7,7 +7,7 @@
 #define ALPHABET_LENGTH 26
 #define FIRST_LETTER 'a'
 
-
+//class to convert characteres to indexes, easy to change for other languages
 class Alphabet {
 public:
     Alphabet();

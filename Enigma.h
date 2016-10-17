@@ -4,7 +4,9 @@
 
 #ifndef CENIGMA_SZ6315_ENIGMA_H
 #define CENIGMA_SZ6315_ENIGMA_H
-
+/*Enigma being a enigma piece can have a next EnigmaPiece which can be set.
+ *That way papeline effect is avoided.
+ * */
 
 #include <memory>
 #include <vector>

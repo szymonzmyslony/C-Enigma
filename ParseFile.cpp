@@ -20,6 +20,7 @@ ParseFile::ParseFile(int numberOfFilesGiven, char **files) {
             checkIfExists(files[i]);
             arrayForMaps = updateMap(files[i], arrayForMaps, false);
         }
+    int a =0;
     }
 }
 
