@@ -12,18 +12,21 @@ int main(int argc, char **argv) {
     }
 
     ParseFile *parseFile = new ParseFile(argc - 1, argv);
+    // it returns a vector by value so it easier to reason about it
     vector<map<int, int>> arrayForMaps = parseFile->getArrayForMaps();
+    delete (parseFile);
     Enigma *enigma = new Enigma(&arrayForMaps, argc - 1);
-    while (!cin.eof()){
+    while (!cin.eof()) {
         string toBeEncoded;
-        cin >> ws >>toBeEncoded;
-        for (char c : toBeEncoded){
-            cout << (enigma->encodeCharacter(c));}
+        cin >> ws >> toBeEncoded;
+        for (char c : toBeEncoded) {
+            cout << (enigma->encodeCharacter(c));
+        }
     }
 
 
     delete (enigma);
-    delete (parseFile);
+
 
 
 }

@@ -23,6 +23,5 @@ int Mapping::decode(int index) {
 }
 
 
-
 Mapping::Mapping(const map<int, int> &mapping) : mapping(mapping) {}
 

@@ -9,8 +9,6 @@ const int Reflector::mappingFunction(int x) {
 }
 
 int Reflector::substitute(int index) {
-
-
     return mappingFunction(index);
 }
 

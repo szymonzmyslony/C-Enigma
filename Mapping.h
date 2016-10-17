@@ -15,16 +15,10 @@ using namespace std;
  */
 
 class Mapping : public EnigmaPiece {
-
-private:
-
 protected:
     virtual int encode(const int index);
-
     virtual int decode(int index);
     map<int, int> mapping;
-
-
     Mapping(const map<int, int> &mapping);
 
 };

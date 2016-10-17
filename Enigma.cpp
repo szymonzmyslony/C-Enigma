@@ -6,23 +6,14 @@
 
 
 char Enigma::encodeCharacter(char given) {
-    if (!isalpha(given)||!isupper(given)) {
+    if (!isalpha(given) || !isupper(given)) {
         throw invalid_argument("received not alpha character");
     }
-    bool isUpper = isupper(given);
-    char toBeEncoded;
-    toBeEncoded = tolower(given);
+    char toBeEncoded = tolower(given);
     int index = alphabet.getIndex(toBeEncoded);
-
     char encodedChar = alphabet.getCharacter(next->substitute(index));
-
-
-    if (isUpper) {
-        return toupper(encodedChar);
-    }
-    return encodedChar;
+    return toupper(encodedChar);
 }
-
 
 Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
     alphabet = *new Alphabet();
@@ -41,7 +32,6 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
         current.reset(new Plugboard(mapsArray->front()));
         this->setNext(current);
         previous = current;
-
         vector<map<int, int>>::iterator it = mapsArray->begin();
         it++;
         for (it; it != mapsArray->end(); ++it) {
@@ -51,8 +41,5 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
         }
         current.reset(new Reflector);
         previous->setNext(current);
-
     }
-
-
 }

@@ -7,16 +7,13 @@
 
 
 #include "Mapping.h"
-
+//needs to override substitute to rotate the first rotor aftet 1st letter was encrypted
 class Plugboard : public Mapping {
 public:
     Plugboard(std::map<int, int> map);
-
-protected:
-    virtual int substitute(int index) override;
-
 private:
     bool has_it_started;
+    virtual int substitute(int index) override;
 
 };
 

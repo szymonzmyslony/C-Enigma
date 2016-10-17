@@ -8,24 +8,17 @@
 
 
 #include "Mapping.h"
-
+//rotor class gets map in the same way as plugboard, introduces invermap
 class Rotor : public Mapping {
 private:
     int latch_position;
-    bool locked;
     map<int, int> inverseMapping;
-    protected:
-
     void rotate(int previous_latch) override;
-
     virtual int encode(const int index) override;
-
     virtual int decode(int index) override;
-
+    void rotate() override;
 public:
     Rotor(std::map<int, int> map);
-
-    void rotate() override;
 };
 
 

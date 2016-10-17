@@ -14,17 +14,15 @@
 using namespace std;
 
 class ParseFile {
-
+/*
+ * parses file to a vector of maps
+ */
 private:
     bool checkIfExists(string name);
-
     vector<map<int, int>> arrayForMaps;
-
     vector<std::map<int, int>> updateMap(char *file_name, vector<std::map<int, int>> map, bool isPlugboard);
-
 public:
     ParseFile(int numberOfFilesGiven, char **files);
-
     const vector<map<int, int>> &getArrayForMaps() const;
 };
 

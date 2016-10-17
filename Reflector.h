@@ -11,12 +11,9 @@
 class Reflector : public EnigmaPiece {
 private:
     const int mappingFunction(int x);
-
+    int substitute(int index) override;
 public:
     Reflector();
-
-protected:
-    int substitute(int index) override;
 
 };
 
