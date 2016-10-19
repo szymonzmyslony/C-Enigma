@@ -4,22 +4,22 @@
 
 #include "Rotor.h"
 
-Rotor::Rotor(map<int, int> map) : Mapping(map), latch_position(STARTING_POSITION_OF_ROTOR) {
-    std::map<int, int>::iterator it;
-    for (it = map.begin(); it != map.end(); ++it) {
-        inverseMapping.insert(make_pair(it->second, it->first));
-    }
+Rotor::Rotor(vector<int> map) : Mapping(map), latch_position(STARTING_POSITION_OF_ROTOR) {
+    inverseMapping = *new vector<int>(ALPHABET_LENGTH);
+    for (int i = 0; i<ALPHABET_LENGTH; i++){
+        inverseMapping[mapping[i]]=i;
+            }
 }
 
 int Rotor::encode(const int index) {
     int pin = (index + latch_position) % ALPHABET_LENGTH;
-    int contact = mapping.find(pin)->second;
+    int contact = mapping[pin];
     return ((contact - latch_position + ALPHABET_LENGTH) % ALPHABET_LENGTH);
 }
 
 int Rotor::decode(int index) {
     int contact = (index + latch_position) % ALPHABET_LENGTH;
-    int pin = inverseMapping.find(contact)->second;
+    int pin = inverseMapping[contact];
     return ((pin - latch_position + ALPHABET_LENGTH) % ALPHABET_LENGTH);
 }
 

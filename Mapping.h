@@ -7,6 +7,7 @@
 
 
 #include <map>
+#include <vector>
 #include "EnigmaPiece.h"
 
 using namespace std;
@@ -18,8 +19,8 @@ class Mapping : public EnigmaPiece {
 protected:
     virtual int encode(const int index);
     virtual int decode(int index);
-    map<int, int> mapping;
-    Mapping(const map<int, int> &mapping);
+    vector<int> mapping;
+    Mapping(vector<int> mapping);
 
 };
 

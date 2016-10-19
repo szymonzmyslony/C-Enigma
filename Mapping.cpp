@@ -5,23 +5,15 @@
 #include "Mapping.h"
 
 int Mapping::encode(const int index) {
-    map<int, int>::iterator it = mapping.find(index);
-    if (it != mapping.end()) {
-        return it->second;
-    }
-    return index;
+    decode(index);
 }
 
 int Mapping::decode(int index) {
-    map<int, int>::iterator it;
-    for (it = mapping.begin(); it != mapping.end(); ++it) {
-        if (it->second == index) {
-            return it->first;
-        }
-    }
+   if (mapping[index]!=-1){
+       return mapping[index];
+   }
     return index;
 }
 
-
-Mapping::Mapping(const map<int, int> &mapping) : mapping(mapping) {}
+Mapping::Mapping(vector<int> mapping) : mapping(mapping) {}
 

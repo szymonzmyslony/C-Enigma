@@ -19,11 +19,11 @@ class ParseFile {
  */
 private:
     bool checkIfExists(string name);
-    vector<map<int, int>> arrayForMaps;
-    vector<std::map<int, int>> updateMap(char *file_name, vector<std::map<int, int>> map, bool isPlugboard);
+    vector<vector<int>> arrayForMaps;
+    vector<vector<int>> updateMap(char *file_name,  vector<vector<int>> map, bool isPlugboard);
 public:
     ParseFile(int numberOfFilesGiven, char **files);
-    const vector<map<int, int>> &getArrayForMaps() const;
+    const  vector<vector<int>> getArrayForMaps();
 };
 
 

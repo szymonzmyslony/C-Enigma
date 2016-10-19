@@ -15,7 +15,7 @@ char Enigma::encodeCharacter(char given) {
     return toupper(encodedChar);
 }
 
-Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
+Enigma::Enigma(vector<vector<int>> *mapsArray, int numberOfFiles) {
     alphabet = *new Alphabet();
     shared_ptr<EnigmaPiece> current(new EnigmaPiece());
     shared_ptr<EnigmaPiece> previous(new EnigmaPiece());
@@ -32,7 +32,7 @@ Enigma::Enigma(vector<map<int, int>> *mapsArray, int numberOfFiles) {
         current.reset(new Plugboard(mapsArray->front()));
         this->setNext(current);
         previous = current;
-        vector<map<int, int>>::iterator it = mapsArray->begin();
+        vector<vector<int>>::iterator it = mapsArray->begin();
         it++;
         for (it; it != mapsArray->end(); ++it) {
             current.reset(new Rotor(*it));

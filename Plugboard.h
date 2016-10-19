@@ -10,7 +10,7 @@
 //needs to override substitute to rotate the first rotor aftet 1st letter was encrypted
 class Plugboard : public Mapping {
 public:
-    Plugboard(std::map<int, int> map);
+    Plugboard(vector<int> map);
 private:
     bool has_it_started;
     virtual int substitute(int index) override;

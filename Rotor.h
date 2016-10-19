@@ -12,13 +12,13 @@
 class Rotor : public Mapping {
 private:
     int latch_position;
-    map<int, int> inverseMapping;
+    vector<int> inverseMapping;
     void rotate(int previous_latch) override;
     virtual int encode(const int index) override;
     virtual int decode(int index) override;
     void rotate() override;
 public:
-    Rotor(std::map<int, int> map);
+    Rotor(vector<int> map);
 };
 
 

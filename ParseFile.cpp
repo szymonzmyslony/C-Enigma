@@ -24,29 +24,33 @@ ParseFile::ParseFile(int numberOfFilesGiven, char **files) {
     }
 }
 
-const vector<map<int, int>> &ParseFile::getArrayForMaps() const {
+const  vector<vector<int>> ParseFile::getArrayForMaps(){
     return arrayForMaps;
 }
 
 
-vector<map<int, int>> ParseFile::updateMap(char *file_name, vector<map<int, int>> map, bool isPlugboard) {
+vector<vector<int>> ParseFile::updateMap(char *file_name,  vector<vector<int>> map, bool isPlugboard) {
     ifstream file(file_name, ifstream::in);
-    std::map<int, int> mapResult;
+    vector<int> mapResult(ALPHABET_LENGTH);
+
     int key;
     int value;
     if (isPlugboard) {
+        for (int i = 0; i<ALPHABET_LENGTH;i++){
+            mapResult[i]=-1;
+        }
         while (!file.eof()) {
             file >> key;
             file >> value;
-            mapResult.insert(make_pair(key, value));
-            mapResult.insert(make_pair(value, key));
+            mapResult[key]=value;
+            mapResult[value]=key;
         }
         map.push_back(mapResult);
     } else {
         int i = 0;
         while (!file.eof()) {
             file >> value;
-            mapResult.insert(make_pair(i, value));
+            mapResult[i]=value;
             i++;
             if (i > 25) {
                 break;

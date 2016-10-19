@@ -5,7 +5,7 @@
 #include "Plugboard.h"
 
 
-Plugboard::Plugboard(map<int, int> map) : Mapping(map), has_it_started(true) {}
+Plugboard::Plugboard(vector<int> map) : Mapping(map), has_it_started(true) {}
 
 int Plugboard::substitute(int index) {
     if (has_it_started) {

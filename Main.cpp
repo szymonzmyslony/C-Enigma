@@ -10,10 +10,9 @@ int main(int argc, char **argv) {
     if (argc == 1) {
         throw exception();
     }
-
     ParseFile *parseFile = new ParseFile(argc - 1, argv);
     // it returns a vector by value so it easier to reason about it
-    vector<map<int, int>> arrayForMaps = parseFile->getArrayForMaps();
+    vector<vector<int>> arrayForMaps = parseFile->getArrayForMaps();
     delete (parseFile);
     Enigma *enigma = new Enigma(&arrayForMaps, argc - 1);
     while (!cin.eof()) {
@@ -23,10 +22,5 @@ int main(int argc, char **argv) {
             cout << (enigma->encodeCharacter(c));
         }
     }
-
-
     delete (enigma);
-
-
-
 }
